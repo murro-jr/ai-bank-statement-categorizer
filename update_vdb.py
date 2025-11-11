@@ -15,11 +15,11 @@ client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 qdrant = QdrantClient(url=os.getenv('QDRANT_URL'), api_key=os.getenv('QDRANT_API_KEY'))
 
 collection_name = "transactions"
-if (qdrant.collection_exists(collection_name=collection_name) != True):
-    qdrant.create_collection(
-        collection_name=collection_name,
-        vectors_config=VectorParams(size=1536, distance=Distance.COSINE)
-    )
+qdrant.delete_collection(collection_name=collection_name)
+qdrant.create_collection(
+    collection_name=collection_name,
+    vectors_config=VectorParams(size=1536, distance=Distance.COSINE)
+)
 
 def embed_text(text: str):
     response = client.embeddings.create(

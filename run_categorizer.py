@@ -43,6 +43,22 @@ def embed_text(text: str):
     )
     return response.data[0].embedding
 
+def check_category(text: str):
+    system_prompt = """You are a financial assistant that classifies bank transactions.
+            Return only one of these categories: ['income','user_expense','business_payment','internal_transfer','other','unknown'].
+            Do not add any markup or symbols.
+        """
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": text},
+        ],
+        response_format={"type": "text"}  # ensures valid JSON output
+    )
+    result = response.choices[0].message.to_json()
+    return result
+
 # --- Configuration ---
 project_id = os.getenv('GOOGLE_PROJECT_ID')
 location = os.getenv('GOOGLE_PROCESS_LOCATION')
@@ -63,6 +79,9 @@ if len(sys.argv) > 1:
             )
             result = search_results.points[0]
             print('SCORE: ', result.score, ', PAYLOAD: ', result.payload)
+
+            openai_result = check_category(entity.mention_text)
+            print('OPENAI CATEGORY: ', openai_result)
             # for result in search_results:
             #     points, payload = result
             #     print(points)
