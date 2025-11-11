@@ -5,6 +5,8 @@ from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams
 from openai import OpenAI
 
+import pandas as pd
+
 load_dotenv()
 
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
@@ -26,17 +28,18 @@ def embed_text(text: str):
     )
     return response.data[0].embedding
 
-# transactions=[]
-# points = []
-# for tx in transactions:
-#     vector = embed_text(tx["desc"])
-#     points.append({
-#         "id": tx["id"],
-#         "vector": vector,
-#         "payload": {
-#             "description": tx["desc"],
-#             "category": tx["category"]
-#         }
-#     })
+df = pd.read_csv(os.getenv('DATAFILE_PATH'))
+transactions = df.to_dict(orient="records")
+points = []
+for tx in transactions:
+    vector = embed_text(tx["description"])
+    points.append({
+        "id": tx["id"],
+        "vector": vector,
+        "payload": {
+            "description": tx["description"],
+            "category": tx["category"]
+        }
+    })
 
-# qdrant.upsert(collection_name=collection_name, points=points)
+qdrant.upsert(collection_name=collection_name, points=points)

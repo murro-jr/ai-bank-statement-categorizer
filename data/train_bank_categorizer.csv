@@ -1,0 +1,5 @@
+id,description,category
+1,Payroll from company,income
+2,Globe Telecom bill payment,user_expense
+3,Payment to supplier ABC,business_payment
+4,Transfer to savings account,internal_transfer
