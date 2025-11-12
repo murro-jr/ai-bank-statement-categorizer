@@ -1,23 +1,7 @@
-id,description,category
-1,Payroll from company,income
-2,Globe Telecom bill payment,user_expense
-3,Payment to supplier ABC,business_payment
-4,Transfer to savings account,internal_transfer
-5,Signature POS Debit 09/02 MD BALTIMORE GIANT FOOD INC SEQ# 071582,user_expense
-6,Nationstar dba Mr Cooper XXXXXX6179 HMS WARRANTY 8002473680 5829389,user_expense
-7,DISCOVER BANK ETRANSFER BLTMORE GAS ELEC ONLINE PMT AMAZON,user_expense
-8,SALARY CREDIT : SALARY CREDIT FROM INFINITE COMPUTER,income
-9,ATM CASH WITHDRAWAL SUBJECT: KUNDA 02MAR0510Card no: 5497XXX0XXXX5605 Ref: 806103986208 7865 KUNDANAHLLI BANGLORE KAIN Ref No:- 02MAR0510,withdrawal
-10,CHEQUE CARD PURCHASE,user_expense
-11,15 Jan 19 00007577 2019-01-15 52 5222625466181406 -250.00,unknown
-12,11 Jan 19 C*DR DARSHANA 5222*1406 08 JAN -950.00,user_expense
-13,14 Jan 19 C*TSAFRIKA HE 5222*1406 11 JAN -30.00,user_expense
-14,18 Jan 19 C*CALTEX CROY 5222*1406 17 JAN -59.93,user_expense
-15,TRANSFER TO CONTRACTOR JOHN DOE,business_payment
-16,OFFICE DEPOT PURCHASE,business_payment
-17,INVOICE PAYMENT: XYZ CLEANING SERVICES,business_payment
-18,UTILITY BILL – BUSINESS PREMISES,business_payment
-19,General Card Deposit,income
-20,PreApproved Payment Bill User Payment,user_expense
-21,General Currency Conversion,other
-22,gmail.com,unknown
+id,description,category,amount
+1,STATEMENT COSTS STATEMENT COSTS,Financial and Banking,-25.0
+2,TERSIA KING LEARNIN 466181406 IB PAYMENT TO,Liabilities,-2000.0
+3,C*PNP CRP WON 5222*140601 APR CHEQUE CARD PURCHASE,Operating Expenses,-111.61
+4,VIRGIN ACT4004839323 167130 ACCOUNT PAYMENT,Other / Miscellaneous,-200.0
+5,00008072 2019-03-30T10:47:42 5222625466181406 AUTOBANK CASH WITHDRAWAL AT,Financial and Banking,-3500.0
+6,SBSANAEDO 00202464458 190329 BOL NAEDO DEBIT,Liabilities,-1040.0

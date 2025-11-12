@@ -38,7 +38,8 @@ for tx in transactions:
         "vector": vector,
         "payload": {
             "description": tx["description"],
-            "category": tx["category"]
+            "category": tx["category"],
+            "amount": tx["amount"]
         }
     })
 
